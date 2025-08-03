@@ -39,15 +39,15 @@ const teams = [
 function TeamCard({ team }) {
   return (
     <div className="
-      bg-white dark:bg-[#272B48] border border-zinc-100 dark:border-zinc-700 
+      bg-white dark:bg-[#181a24]/95  border border-zinc-100 dark:border-zinc-700 
       rounded-xl shadow-md p-5 flex flex-col gap-3 hover:shadow-xl transition
       font-iransansx
     ">
       <div className="flex items-center gap-3 mb-2">
         <FaUsers className="text-[#6795fc] text-2xl" />
-        <span className="font-bold text-lg">{team.name}</span>
+        <span className="font-bold text-lg dark:text-zinc-200">{team.name}</span>
       </div>
-      <p className="text-zinc-400 mb-2 dark:text-zinc-300 min-h-[2rem]">{team.description}</p>
+      <p className="text-zinc-400 mb-2 dark:text-zinc-500 min-h-[2rem]">{team.description}</p>
       <div className="flex items-center justify-between">
         <div className="flex -space-x-2">
           {team.members.map((m, idx) => (

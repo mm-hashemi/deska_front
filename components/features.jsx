@@ -15,17 +15,17 @@ const badges = [
 // کارت‌های ویژگی پایین
 const features = [
   {
-    icon: <FaCrown className="text-3xl text-black" />,
+    icon: <FaCrown className="text-3xl text-black dark:text-gray-200 transition-colors" />,
     title: "Best in Class",
     desc: "Lorem ipsum dolor sit amet, consectetur",
   },
   {
-    icon: <FaDollarSign className="text-3xl text-black" />,
+    icon: <FaDollarSign className="text-3xl text-black dark:text-gray-200 transition-colors" />,
     title: "Best value",
     desc: "Lorem ipsum dolor sit amet, consectetur",
   },
   {
-    icon: <FaShieldAlt className="text-3xl text-black" />,
+    icon: <FaShieldAlt className="text-3xl text-black dark:text-gray-200 transition-colors" />,
     title: "Zero risk",
     desc: "Lorem ipsum dolor sit amet, consectetur",
   },
@@ -33,9 +33,9 @@ const features = [
 
 export default function AwardsAndFeatures() {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center pt-16 pb-14">
+    <section className="w-full min-h-screen flex flex-col items-center pt-16 pb-14 transition-colors">
       {/* ردیف badgeها */}
-      <div className="bg-white rounded-2xl shadow-md flex flex-row flex-wrap gap-4 px-8 py-6 max-w-max mx-auto">
+      <div className="bg-white dark:bg-[#232433] rounded-2xl shadow-md flex flex-row flex-wrap gap-4 px-8 py-6 max-w-max mx-auto transition-colors">
         {badges.map((b, i) => (
           <img
             key={i}
@@ -52,12 +52,16 @@ export default function AwardsAndFeatures() {
         {features.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-2xl shadow-md flex items-center px-7 py-6 min-w-[290px] max-w-[330px] gap-5"
+            className="bg-white dark:bg-[#232433] rounded-2xl shadow-md flex items-center px-7 py-6 min-w-[290px] max-w-[330px] gap-5 transition-colors"
           >
             {item.icon}
             <div>
-              <div className="font-bold text-lg text-black mb-1">{item.title}</div>
-              <div className="text-gray-400 text-sm">{item.desc}</div>
+              <div className="font-bold text-lg text-black dark:text-gray-100 mb-1 transition-colors">
+                {item.title}
+              </div>
+              <div className="text-gray-400 dark:text-gray-300 text-sm transition-colors">
+                {item.desc}
+              </div>
             </div>
           </div>
         ))}

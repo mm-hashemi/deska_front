@@ -11,9 +11,9 @@ export default function Layout({ children }) {
      <div className="flex w-full">
            <TaskViewProvider>
 
-           <Sidebar/>
+          
           <div className="w-full flex flex-col">
-          <DashboardHeader/>
+        
             <TaskViewsBar />
           {children}
            </div>

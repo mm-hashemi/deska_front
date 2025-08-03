@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
     
-     <div className="flex w-full">
+     <div className="flex w-full dark:bg-[#1d202a]">
            <TaskViewProvider>
 
            <Sidebar/>

@@ -111,7 +111,7 @@ const baseChartOptions = {
   }
 }
 
-const glassCard = "backdrop-blur-[5px] bg-white/75 dark:bg-[#22243a]/60 border border-zinc-200 dark:border-zinc-800 shadow-lg hover:shadow-xl transition duration-300"
+const glassCard = "backdrop-blur-[5px] bg-white/75 dark:bg-[#181a24]/95 border border-zinc-200 dark:border-zinc-800 shadow-lg hover:shadow-xl transition duration-300"
 
 export default function AnalyticsNewUI() {
   return (

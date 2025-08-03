@@ -70,7 +70,7 @@ export default function PricingPlans() {
       >
        
         {/* Switch */}
-        <div className="flex items-center bg-zinc-100/60 dark:bg-zinc-700/50 rounded-full shadow border border-zinc-300 dark:border-zinc-700 px-2 py-1">
+        <div className="flex items-center bg-zinc-100/60 dark:bg-[#181a24]/95 rounded-full shadow border border-zinc-300 dark:border-zinc-700 px-2 py-1">
           <button className={clsx(
             "text-sm font-bold px-4 py-1 rounded-full transition",
             billing === "monthly" ? "bg-white dark:bg-zinc-900/60 text-indigo-700 shadow" : "text-zinc-500 hover:text-indigo-600"
@@ -95,7 +95,7 @@ export default function PricingPlans() {
             animate={{ scale: 1, y: 0, opacity: 1 }}
             transition={{ duration: 0.54 + i*0.07, type: "spring", bounce: 0.18 }}
             className={clsx(
-              "relative px-6 py-9 rounded-[2rem] backdrop-blur-lg border border-indigo-100/50 dark:border-zinc-800 shadow-xl flex flex-col gap-3 group bg-white/70 dark:bg-[#242748]/70",
+              "relative px-6 py-9 rounded-[2rem] backdrop-blur-lg border border-indigo-100/50 dark:border-zinc-800 shadow-xl flex flex-col gap-3 group bg-white/70 dark:bg-[#181a24]/95",
               plan.highlight && "ring-2 ring-indigo-400 !shadow-2xl scale-[1.05] z-10",
               "transition hover:-translate-y-1"
             )}

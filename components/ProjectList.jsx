@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { FaFolderOpen, FaPlus } from "react-icons/fa"
@@ -7,10 +8,14 @@ import { projects as projectData } from '@/data/projectData'
 
 function statusColor(status) {
   switch(status) {
-    case "Done": return "bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300"
-    case "In Progress": return "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300"
-    case "Todo": return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-200"
-    default: return ""
+    case "Done":
+      return "bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300"
+    case "In Progress":
+      return "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300"
+    case "Todo":
+      return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-200"
+    default:
+      return ""
   }
 }
 
@@ -19,22 +24,22 @@ export default function ProjectList({ projects: projectsProp }) {
   const [projects, setProjects] = useState(
     projectsProp && projectsProp.length ? projectsProp : projectData
   )
-const COLORS = [
-  "#4fd1ff", // Blue
-  "#36d399", // Green
-  "#fbbf24", // Yellow
-  "#f87171", // Red
-  "#818cf8", // Indigo
-  "#f472b6", // Pink
-]
-  // فرم ساده
+  const COLORS = [
+    "#4fd1ff", // Blue
+    "#36d399", // Green
+    "#fbbf24", // Yellow
+    "#f87171", // Red
+    "#818cf8", // Indigo
+    "#f472b6", // Pink
+  ]
   const [form, setForm] = useState({
     name: '',
     color: '#4fd1ff',
     status: 'Todo',
     tasks: 0
   })
-  // برای دمو: فقط یک نفر اضافه بشود
+
+  // Sample member, you can change to your team logic
   const defaultMember = {
     name: "Michael Scott",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
@@ -59,11 +64,11 @@ const COLORS = [
   }
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto mt-8">
+    <div className="relative w-full max-w-6xl mx-auto mt-8  transition-colors duration-300">
       <div className="flex justify-between items-center mb-6 px-1">
-        <h2 className="text-xl font-bold tracking-tight">Projects</h2>
+       
         <button
-          className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm font-semibold 
+          className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm font-semibold
           transition-all focus:outline-none focus:ring-2 focus:ring-blue-300"
           onClick={() => setShowModal(true)}
         >
@@ -78,7 +83,7 @@ const COLORS = [
             key={project.id}
             href={`projects/${project.id}`}
             className="group flex-1 min-w-[260px] max-w-xs
-              bg-white/90 dark:bg-[#23263a]/80
+              bg-white/90 dark:bg-[#181a24]/95  dark:text-zinc-400
               rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition
               border border-zinc-100 dark:border-zinc-800
               flex flex-col p-5
@@ -163,30 +168,28 @@ const COLORS = [
                 />
               </div>
               <div className="flex gap-4">
-               
-<div>
-  <label className="block text-xs font-medium mb-1 text-zinc-600 dark:text-zinc-200">Color</label>
-  <div className="flex gap-2 mt-1">
-    {COLORS.map(c => (
-      <button
-        key={c}
-        type="button"
-        className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ring-0
-          ${form.color === c
-            ? 'border-blue-500 ring-2 ring-blue-200'
-            : 'border-zinc-300 dark:border-zinc-700'}
-        `}
-        style={{ background: c }}
-        onClick={() => setForm(f => ({ ...f, color: c }))}
-        aria-label={c}
-      >
-        {form.color === c &&
-          <span className="w-3 h-3 rounded-full bg-white border-2 border-white shadow" />}
-      </button>
-    ))}
-  </div>
-</div>
-
+                <div>
+                  <label className="block text-xs font-medium mb-1 text-zinc-600 dark:text-zinc-200">Color</label>
+                  <div className="flex gap-2 mt-1">
+                    {COLORS.map(c => (
+                      <button
+                        key={c}
+                        type="button"
+                        className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ring-0
+                          ${form.color === c
+                            ? 'border-blue-500 ring-2 ring-blue-200'
+                            : 'border-zinc-300 dark:border-zinc-700'}
+                        `}
+                        style={{ background: c }}
+                        onClick={() => setForm(f => ({ ...f, color: c }))}
+                        aria-label={c}
+                      >
+                        {form.color === c &&
+                          <span className="w-3 h-3 rounded-full bg-white border-2 border-white shadow" />}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <div className="flex-1">
                   <label className="block text-xs font-medium mb-1 text-zinc-600 dark:text-zinc-200">Status</label>
                   <select
@@ -199,7 +202,6 @@ const COLORS = [
                     <option>Done</option>
                   </select>
                 </div>
-                
               </div>
               <div className="flex justify-end gap-2 mt-4">
                 <button
